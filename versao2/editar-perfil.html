@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>WorkMatch</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="vagas.html" class="nav-link">Vagas</a>
+                    <a href="gerenciar-vagas.html" class="nav-link">Painel</a>
+                </nav>
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="logoutBtn">Sair</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span>›</span>
+                <span>Meu Perfil</span>
+            </nav>
+
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <div class="avatar-placeholder" id="avatarPlaceholder">
+                        <span id="avatarInitials">?</span>
+                    </div>
+                    <button class="btn btn-outline btn-small" id="changeAvatarBtn">Alterar Foto</button>
+                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                </div>
+                <div class="profile-info">
+                    <h1 id="profileName">Carregando...</h1>
+                    <p id="profileType">Carregando...</p>
+                    <div class="profile-stats">
+                        <div class="stat" id="candidateStats" style="display: none;">
+                            <span class="stat-number" id="appliedJobs">0</span>
+                            <span class="stat-label">Candidaturas</span>
+                        </div>
+                        <div class="stat" id="companyStats" style="display: none;">
+                            <span class="stat-number" id="publishedJobs">0</span>
+                            <span class="stat-label">Vagas Publicadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="profile-tab active" data-tab="general">Informações Gerais</button>
+                <button class="profile-tab" data-tab="candidate" id="candidateTab" style="display: none;">Perfil do Candidato</button>
+                <button class="profile-tab" data-tab="company" id="companyTab" style="display: none;">Perfil da Empresa</button>
+                <button class="profile-tab" data-tab="security">Segurança</button>
+            </div>
+
+            <div class="profile-content">
+                <!-- INFORMAÇÕES GERAIS -->
+                <div class="tab-content active" id="generalTab">
+                    <form class="profile-form" id="generalForm">
+                        <h2>Informações Básicas</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Nome Completo*</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthDate">Data de Nascimento</label>
+                                <input type="date" id="birthDate">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Localização</label>
+                            <input type="text" id="location" placeholder="Cidade, Estado">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- PERFIL DO CANDIDATO -->
+                <div class="tab-content" id="candidateProfileTab">
+                    <form class="profile-form" id="candidateForm">
+                        <h2>Perfil do Candidato</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="course">Curso</label>
+                                <input type="text" id="course" placeholder="Ex: Engenharia de Software">
+                            </div>
+                            <div class="form-group">
+                                <label for="university">Universidade</label>
+                                <input type="text" id="university" placeholder="Ex: USP">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="semester">Semestre</label>
+                                <select id="semester">
+                                    <option value="">Selecione</option>
+                                    <option value="1">1º Semestre</option>
+                                    <option value="2">2º Semestre</option>
+                                    <option value="3">3º Semestre</option>
+                                    <option value="4">4º Semestre</option>
+                                    <option value="5">5º Semestre</option>
+                                    <option value="6">6º Semestre</option>
+                                    <option value="7">7º Semestre</option>
+                                    <option value="8">8º Semestre</option>
+                                    <option value="9">9º Semestre</option>
+                                    <option value="10">10º Semestre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="graduationYear">Ano de Formação</label>
+                                <input type="number" id="graduationYear" min="2024" max="2030">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills">Habilidades</label>
+                            <textarea id="skills" rows="3" placeholder="Liste suas principais habilidades separadas por vírgula"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio">Sobre mim</label>
+                            <textarea id="bio" rows="4" placeholder="Conte um pouco sobre você, seus objetivos e experiências..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resume">Currículo (PDF)</label>
+                            <input type="file" id="resume" accept=".pdf">
+                            <small>Tamanho máximo: 5MB</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Salvar Perfil</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Company Profile Tab -->
+                <div class="tab-content" id="companyProfileTab">
+                    <form class="profile-form" id="companyForm">
+                        <h2>Perfil da Empresa</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Nome da Empresa*</label>
+                                <input type="text" id="companyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cnpj">CNPJ</label>
+                                <input type="text" id="cnpj" placeholder="00.000.000/0000-00">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Setor</label>
+                                <select id="industry">
+                                    <option value="">Selecione o setor</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="varejo">Varejo</option>
+                                    <option value="industria">Indústria</option>
+                                    <option value="servicos">Serviços</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Tamanho</label>
+                                <select id="companySize">
+                                    <option value="">Selecione</option>
+                                    <option value="startup">Startup (até 50)</option>
+                                    <option value="pequena">Pequena (51-200)</option>
+                                    <option value="media">Média (201-1000)</option>
+                                    <option value="grande">Grande (1000+)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input type="url" id="website" placeholder="https://www.exemplo.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyDescription">Sobre a Empresa</label>
+                            <textarea id="companyDescription" rows="5" placeholder="Descreva sua empresa, missão, valores e cultura..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Salvar Perfil</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- DELETAR CONTA -->
+    <div class="modal" id="deleteAccountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmar Exclusão de Conta</h2>
+                <button class="modal-close" id="closeDeleteAccountModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Esta ação é irreversível!</strong></p>
+                <p>Ao excluir sua conta, todos os seus dados serão perdidos permanentemente.</p>
+                <div class="form-group">
+                    <label for="deleteConfirmPassword">Digite sua senha para confirmar:</label>
+                    <input type="password" id="deleteConfirmPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-outline" id="cancelDeleteAccount">Cancelar</button>
+                    <button class="btn btn-danger" id="confirmDeleteAccount">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

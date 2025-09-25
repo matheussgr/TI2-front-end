@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Vaga</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>WorkMatch</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="vagas.html" class="nav-link">Vagas</a>
+                    <a href="index.html#sobre" class="nav-link">Sobre</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="auth.html" class="btn btn-outline">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+     <!-- CONTÉUDO PRINCIPAL -->
+    <main class="job-detail-page">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span>›</span>
+                <a href="vagas.html">Vagas</a>
+                <span>›</span>
+                <span id="breadcrumbTitle">Carregando...</span>
+            </nav>
+
+            <div class="job-detail-container">
+                <div class="job-main-info">
+                    <div class="job-header">
+                        <div class="company-logo">
+                            <span id="companyInitial">?</span>
+                        </div>
+                        <div class="job-title-section">
+                            <h1 id="jobTitle">Carregando...</h1>
+                            <p class="company-info">
+                                <span id="companyName">Carregando...</span>
+                                <span class="separator">•</span>
+                                <span id="jobLocation">Carregando...</span>
+                                <span class="separator">•</span>
+                                <span id="jobModality">Carregando...</span>
+                            </p>
+                            <div class="job-meta">
+                                <span class="job-salary" id="jobSalary">R$ --</span>
+                                <span class="job-date" id="jobDate">Publicado há -- dias</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job-actions">
+                        <button class="btn btn-primary btn-large" id="applyBtn">
+                            Candidatar-se a esta vaga
+                        </button>
+                        <button class="btn btn-outline btn-icon" id="saveBtn">
+                            <img src="images/heart.png" class="icons"/> Salvar
+                        </button>
+                    </div>
+
+                    <div class="job-content">
+                        <section class="job-section">
+                            <h2>Sobre a vaga</h2>
+                            <div class="job-description" id="jobDescription">
+                                <p>Carregando descrição da vaga...</p>
+                            </div>
+                        </section>
+
+                        <section class="job-section">
+                            <h2>Requisitos</h2>
+                            <div class="job-requirements" id="jobRequirements">
+                                <p>Carregando requisitos...</p>
+                            </div>
+                        </section>
+
+                        <section class="job-section">
+                            <h2>Benefícios</h2>
+                            <div class="job-benefits" id="jobBenefits">
+                                <p>Carregando benefícios...</p>
+                            </div>
+                        </section>
+
+                        <section class="job-section">
+                            <h2>Sobre a empresa</h2>
+                            <div class="company-info-section">
+                                <div class="company-details" id="companyDetails">
+                                    <p>Carregando informações da empresa...</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <aside class="job-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Informações da vaga</h3>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="info-label">Área:</span>
+                                <span class="info-value" id="sidebarArea">--</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Modalidade:</span>
+                                <span class="info-value" id="sidebarModality">--</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Duração:</span>
+                                <span class="info-value" id="sidebarDuration">--</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Carga horária:</span>
+                                <span class="info-value" id="sidebarWorkload">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DE CANDIDATURA -->
+    <div class="modal" id="applicationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Candidatar-se à vaga</h2>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="applicationForm">
+                    <div class="form-group">
+                        <label>Nome completo</label>
+                        <input type="text" id="applicantName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="applicantEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="tel" id="applicantPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Currículo (PDF)</label>
+                        <input type="file" id="applicantCV" accept=".pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Carta de apresentação (opcional)</label>
+                        <textarea id="coverLetter" rows="4" placeholder="Conte por que você é o candidato ideal para esta vaga..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelApplication">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Enviar candidatura</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

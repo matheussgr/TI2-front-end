@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar/Editar Vaga</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>WorkMatch</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="gerenciar-vagas.html" class="nav-link">Painel</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="gerenciar-vagas.html" class="btn btn-outline">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="edit-job-page">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span>›</span>
+                <a href="gerenciar-vagas.html">Painel</a>
+                <span>›</span>
+                <span id="breadcrumbTitle">Nova Vaga</span>
+            </nav>
+
+            <div class="page-header">
+                <h1 id="pageTitle">Publicar Nova Vaga</h1>
+                <p>Preencha as informações abaixo para criar uma nova oportunidade de estágio</p>
+            </div>
+
+             <!-- FORM DE VAGA -->
+            <form class="job-form" id="jobForm">
+                <div class="form-sections">
+                    <!-- INFORMAÇÕES BÁSICAS -->
+                    <div class="form-section">
+                        <h2>Informações Básicas</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobTitle">Título da Vaga*</label>
+                                <input type="text" id="jobTitle" required placeholder="Ex: Estágio em Desenvolvimento Web">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobArea">Área*</label>
+                                <select id="jobArea" required>
+                                    <option value="">Selecione a área</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="rh">Recursos Humanos</option>
+                                    <option value="design">Design</option>
+                                    <option value="vendas">Vendas</option>
+                                    <option value="juridico">Jurídico</option>
+                                    <option value="engenharia">Engenharia</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobLocation">Localização*</label>
+                                <input type="text" id="jobLocation" required placeholder="Ex: São Paulo, SP">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobModality">Modalidade*</label>
+                                <select id="jobModality" required>
+                                    <option value="">Selecione a modalidade</option>
+                                    <option value="presencial">Presencial</option>
+                                    <option value="remoto">Remoto</option>
+                                    <option value="hibrido">Híbrido</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobSalary">Bolsa Auxílio (R$)</label>
+                                <input type="number" id="jobSalary" placeholder="Ex: 1200">
+                            </div>
+                            <div class="form-group">
+                                <label for="jobWorkload">Carga Horária</label>
+                                <select id="jobWorkload">
+                                    <option value="">Selecione</option>
+                                    <option value="20h">20 horas/semana</option>
+                                    <option value="30h">30 horas/semana</option>
+                                    <option value="40h">40 horas/semana</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobDuration">Duração do Estágio</label>
+                            <select id="jobDuration">
+                                <option value="">Selecione</option>
+                                <option value="6 meses">6 meses</option>
+                                <option value="12 meses">12 meses</option>
+                                <option value="18 meses">18 meses</option>
+                                <option value="24 meses">24 meses</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- DESCRIÇÃO DA VAGA -->
+                    <div class="form-section">
+                        <h2>Descrição da Vaga</h2>
+                        
+                        <div class="form-group">
+                            <label for="jobDescription">Descrição*</label>
+                            <textarea id="jobDescription" rows="6" required placeholder="Descreva as principais atividades e responsabilidades do estágio..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobRequirements">Requisitos*</label>
+                            <textarea id="jobRequirements" rows="5" required placeholder="Liste os requisitos necessários para a vaga..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobBenefits">Benefícios</label>
+                            <textarea id="jobBenefits" rows="4" placeholder="Descreva os benefícios oferecidos..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- INFORMAÇÕES DA VAGA -->
+                    <div class="form-section">
+                        <h2>Informações da Empresa</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Nome da Empresa*</label>
+                                <input type="text" id="companyName" required placeholder="Nome da sua empresa">
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Tamanho da Empresa</label>
+                                <select id="companySize">
+                                    <option value="">Selecione</option>
+                                    <option value="startup">Startup (até 50 funcionários)</option>
+                                    <option value="pequena">Pequena (51-200 funcionários)</option>
+                                    <option value="media">Média (201-1000 funcionários)</option>
+                                    <option value="grande">Grande (1000+ funcionários)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyDescription">Sobre a Empresa</label>
+                            <textarea id="companyDescription" rows="4" placeholder="Conte um pouco sobre sua empresa, cultura e missão..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- INFORMAÇÕES ADICIONAIS -->
+                    <div class="form-section">
+                        <h2>Configurações Adicionais</h2>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="jobUrgent">
+                                <span class="checkmark"></span>
+                                Marcar como urgente
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="jobFeatured">
+                                <span class="checkmark"></span>
+                                Destacar vaga (aparece nas vagas em destaque)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="gerenciar-vagas.html" class="btn btn-outline">Cancelar</a>
+                    <button type="button" class="btn btn-secondary" id="saveAsDraft">Salvar como Rascunho</button>
+                    <button type="submit" class="btn btn-primary">Publicar Vaga</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

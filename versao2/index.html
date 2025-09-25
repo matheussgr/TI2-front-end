@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkMatch</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER-->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Workmatch</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#vagas" class="nav-link">Vagas</a>
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="auth.html" class="btn btn-outline">Entrar</a>
+                    <a href="auth.html?mode=signup" class="btn btn-primary">Cadastrar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 'HERO'-->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Encontre o estágio dos seus sonhos</h1>
+                    <p class="hero-subtitle">Conectamos estudantes talentosos com as melhores oportunidades de estágio do mercado</p>
+                </div>
+            </div>
+        </section>
+
+    <!-- SEÇÃO DE BUSCA--> 
+        <section class="search-section" id="vagas">
+            <div class="container">
+                <div class="search-card">
+                    <h2>Buscar Vagas de Estágio</h2>
+                    <form class="search-form" id="searchForm">
+                        <div class="search-group">
+                            <input type="text" placeholder="Cargo ou palavra-chave" id="searchKeyword" class="search-input">
+                        </div>
+                        <div class="search-group">
+                            <input type="text" placeholder="Localização" id="searchLocation" class="search-input">
+                        </div>
+                        <div class="search-group">
+                            <select id="searchArea" class="search-select">
+                                <option value="">Todas as áreas</option>
+                                <option value="tecnologia">Tecnologia</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="rh">Recursos Humanos</option>
+                                <option value="design">Design</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-search">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DAS VAGAS-->
+        <section class="jobs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Vagas em Destaque</h2>
+                    <a href="vagas.html" class="btn btn-outline">Ver todas as vagas</a>
+                </div>
+                <div class="jobs-grid" id="jobsGrid">
+                    <!-- VAGAS GERADAS AQUI -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE-->
+        <section class="about-section" id="sobre">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Por que escolher a WorkMatch?</h2>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="feature-icon"><img src="images/job-promotion.png" class="icons"/></div>
+                                <div class="feature-content">
+                                    <h3>Vagas Qualificadas</h3>
+                                    <p>Apenas oportunidades reais de empresas renomadas</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon"><img src="images/fast.png" class="icons"/></div>
+                                <div class="feature-content">
+                                    <h3>Processo Ágil</h3>
+                                    <p>Candidatura rápida e prática</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon"><img src="images/match.png" class="icons"/></div>
+                                <div class="feature-content">
+                                    <h3>Match Perfeito</h3>
+                                    <p>Conecta você às melhores oportunidades</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER-->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WorkMatch</h3>
+                    <p>Conectando talentos com oportunidades</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <a href="vagas.html">Vagas</a>
+                    <a href="auth.html">Para Empresas</a>
+                    <a href="#sobre">Sobre Nós</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>workmatch@gmail.com</p>
+                    <p>(31) 99999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WorkMatch. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

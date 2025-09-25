@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Vagas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>WorkMatch</h1></a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="vagas.html" class="nav-link">Vagas</a>
+                    <a href="gerenciar-vagas.html" class="nav-link active">Painel</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="editar-perfil.html" class="btn btn-outline">Perfil</a>
+                    <button class="btn btn-secondary" id="logoutBtn">Sair</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   <!-- DASHBOARD DA EMPRESA -->
+    <main class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="welcome-section">
+                    <h1>Painel da Empresa</h1>
+                    <p>Gerencie suas vagas</p>
+                </div>
+                <a href="editar-vaga.html" class="btn btn-primary">Publicar Nova Vaga</a>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon"><img src="images/business.png" class="icons"/></div>
+                    <div class="stat-info">
+                        <h3 id="totalJobs">0</h3>
+                        <p>Vagas Ativas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><img src="images/people.png" class="icons"/></div>
+                    <div class="stat-info">
+                        <h3 id="totalApplications">0</h3>
+                        <p>Candidaturas</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><img src="images/check.png" class="icons"/></div>
+                    <div class="stat-info">
+                        <h3 id="totalHired">0</h3>
+                        <p>Contratações</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="jobs-management">
+                    <div class="section-header">
+                        <h2>Suas Vagas</h2>
+                        <div class="filter-controls">
+                            <select id="statusFilter" class="filter-select">
+                                <option value="">Todos os status</option>
+                                <option value="active">Ativas</option>
+                                <option value="paused">Pausadas</option>
+                                <option value="closed">Fechadas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="jobs-table-container">
+                        <table class="jobs-table">
+                            <thead>
+                                <tr>
+                                    <th>Vaga</th>
+                                    <th>Status</th>
+                                    <th>Candidatos</th>
+                                    <th>Visualizações</th>
+                                    <th>Data</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="jobsTableBody">
+                                <!-- AS VAGAS APARECEM AQUI -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- DELETAR UMA VAGA -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Confirmar Exclusão</h2>
+                <button class="modal-close" id="closeDeleteModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja excluir esta vaga? Esta ação não pode ser desfeita.</p>
+                <div class="form-actions">
+                    <button class="btn btn-outline" id="cancelDelete">Cancelar</button>
+                    <button class="btn btn-danger" id="confirmDelete">Excluir Vaga</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
