@@ -120,6 +120,16 @@ body {
     font-weight: 700;
     text-decoration: none;
 }
+.logo{
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+    
+}
+.main-logo{
+    width: 50px;
+    height: 50px;
+}
 
 .logo a {
     text-decoration: none;
@@ -536,6 +546,7 @@ body {
     width: 30px;
     height: 30px;
 }
+
 .feature-content h3 {
     font-size: 1.125rem;
     font-weight: 600;

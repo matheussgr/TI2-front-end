@@ -1,4 +1,4 @@
-// Simulated data for the application
+// SIMULAÇÃO DAS VAGAS
 const mockData = {
     jobs: [
         {
@@ -138,7 +138,7 @@ const mockData = {
         }
     ],
     
-    // Statistics
+    // ESTATISTICAS SIMULADAS
     stats: {
         totalJobs: 12,
         totalApplications: 156,
@@ -1350,6 +1350,8 @@ const router = {
             default:
                 console.log('No specific initialization for this page');
         }
+        
+        
     }
 };
 
